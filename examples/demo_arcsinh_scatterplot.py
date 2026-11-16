@@ -1,7 +1,11 @@
 """Demo script for arcsinh axis — scatter plot with positive and negative values."""
 
+import os
+
 import numpy as np
-from axes import plot_amounts_arcsinh
+from axis_scales import plot_amounts_arcsinh
+
+os.makedirs("plots", exist_ok=True)
 
 np.random.seed(42)
 
@@ -25,7 +29,7 @@ transformed_y = np.arcsinh(y / scale)
 ax.scatter(x, transformed_y, color='steelblue', s=5, zorder=3)
 
 # Override y-axis bounds to cover 99% of data
-from amount_arcsinh_ticks import get_axis_bounds_and_ticks_arcsinh
+from axis_scales import get_axis_bounds_and_ticks_arcsinh
 bounds, ticks, amount_labels = get_axis_bounds_and_ticks_arcsinh([p_low, p_high], scale=scale)
 ax.set_ylim(bounds)
 ax.set_yticks(ticks)

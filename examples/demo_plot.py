@@ -1,7 +1,11 @@
 """Demo script for plot_ratios() — generates 4 PNGs matching demo_plot_shaded.py cases."""
 
+import os
+
 import numpy as np
-from axes import plot_ratios
+from axis_scales import plot_ratios
+
+os.makedirs("plots", exist_ok=True)
 
 x = np.linspace(0, 10, 200)
 

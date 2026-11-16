@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axis-scales"
+version = "0.1.0"
+description = "Tick marks and bounds for compressed (asinh / asinh2) matplotlib axes, for amounts and for ratios labeled in percent change"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = ["numpy", "matplotlib"]
+
+[project.urls]
+Repository = "https://github.com/Sustainable-Solutions-Lab/axis-scales"
+
+[tool.setuptools]
+packages = ["axis_scales"]

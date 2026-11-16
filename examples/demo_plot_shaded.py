@@ -1,7 +1,11 @@
 """Demo script for plot_ratios_shaded() — generates 4 PNGs showing each column-count case."""
 
+import os
+
 import numpy as np
-from axes import plot_ratios_shaded
+from axis_scales import plot_ratios_shaded
+
+os.makedirs("plots", exist_ok=True)
 
 x = np.linspace(0, 10, 200)
 

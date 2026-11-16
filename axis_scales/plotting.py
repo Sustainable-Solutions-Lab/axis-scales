@@ -1,6 +1,6 @@
-# Axis bounds and tick mark helpers for matplotlib plots.
+# axis_scales.plotting: axis bounds and tick helpers, and ready-made plot functions.
 #
-# Two functions for different use cases:
+# Axis helpers (the ones below are re-exported by the axis_scales package):
 #
 #   get_axis_bounds_and_ticks(data, padding)
 #       For linear-scale axes. Returns nice round tick marks.
@@ -45,13 +45,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from math import log10, floor
 
-from ratio_percent_ticks import (  # noqa: F401
+from .ratio_percent_ticks import (  # noqa: F401
     get_axis_bounds_and_ticks_ratio_pct,
     get_axis_bounds_and_ticks_ratio_compressed,
     ratio_axis_transform,
     format_percent,
 )
-from amount_arcsinh_ticks import (  # noqa: F401
+from .amount_arcsinh_ticks import (  # noqa: F401
     get_axis_bounds_and_ticks_arcsinh,
     amount_to_arcsinh,
 )

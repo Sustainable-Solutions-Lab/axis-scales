@@ -27,7 +27,7 @@
 
 import numpy as np
 
-from asinh_transforms import asinh_transform, asinh_inverse, choose_ladder_ticks
+from .asinh_transforms import asinh_transform, asinh_inverse, choose_ladder_ticks
 
 
 def amount_to_arcsinh(a, scale, kind="asinh"):

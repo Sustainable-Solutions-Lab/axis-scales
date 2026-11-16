@@ -10,11 +10,11 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-from axes import (format_percent, get_axis_bounds_and_ticks_ratio_pct, get_axis_bounds_and_ticks_ratio_compressed,
-                  ratio_axis_transform, get_axis_bounds_and_ticks_arcsinh, amount_to_arcsinh)
+from axis_scales import (format_percent, get_axis_bounds_and_ticks_ratio_pct, get_axis_bounds_and_ticks_ratio_compressed,
+                         ratio_axis_transform, get_axis_bounds_and_ticks_arcsinh, amount_to_arcsinh)
 
 rng = np.random.default_rng(42)
-os.makedirs('plots', exist_ok=True)
+os.makedirs('docs', exist_ok=True)
 
 # --- Ratio data --------------------------------------------------------------
 groups = ['A', 'B', 'C', 'Wild']
@@ -46,8 +46,8 @@ for ax, kind in zip(axs, ['log', 'asinh', 'asinh2']):
     ax.set_title(kind if kind == 'log' else f'{kind} (scale = {SCALE} ln)')
 axs[0].set_ylabel('Change')
 fig.suptitle('Ratio data: plain log axis vs compressed axes')
-fig.savefig('plots/demo_compressed_ratio_axes.png', dpi=150)
-print('Saved plots/demo_compressed_ratio_axes.png')
+fig.savefig('docs/demo_compressed_ratio_axes.png', dpi=150)
+print('Saved docs/demo_compressed_ratio_axes.png')
 
 # --- Amount data -------------------------------------------------------------
 x = np.linspace(0, 1, 1000)
@@ -65,5 +65,5 @@ for ax, kind in zip(axs, ['asinh', 'asinh2']):
     ax.set_title(f'{kind} (scale = {amount_scale:g})')
 axs[0].set_ylabel('Amount')
 fig.suptitle('Amount data: asinh vs asinh2')
-fig.savefig('plots/demo_compressed_amount_axes.png', dpi=150)
-print('Saved plots/demo_compressed_amount_axes.png')
+fig.savefig('docs/demo_compressed_amount_axes.png', dpi=150)
+print('Saved docs/demo_compressed_amount_axes.png')
